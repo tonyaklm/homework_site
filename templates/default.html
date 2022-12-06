@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greetings</title>
+    <link rel="shortcut icon" href="#">
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+</head>
+<body>
+<form>
+    <h2>
+        <center>It is the site to make your own CV<br/> <br/>
+            Click the button to register or login and to create your own CV
+        </center>
+    </h2>
+    <button type="submit" formaction="{{url_for('login')}}">Click me</button>
+</form>
+<br>
+
+
+</body>
+</html>
+
+

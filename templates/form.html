@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+            "width=device-width, initial-scale=1.0">
+    <title>
+        Build a Survey Form using HTML and CSS
+    </title>
+
+    <style>
+
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+             margin: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+        width: 60%;
+	height: 40px;
+	margin: 20px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 30px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+        }
+      h1{
+      color: #fff;
+      }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+<h1>
+    <center>Form for CV</center>
+</h1>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<form id="form">
+
+    <!-- Details -->
+    <h6>
+        <center>The limit of words is 1024 letters and be sure that url of your photo is valid</center>
+    </h6>
+    <div class="form-control">
+        <label for="name" id="label-name">
+            Name: {{name}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="name" name="name"
+               placeholder="Enter your name"/>
+    </div>
+
+    <div class="form-control">
+        <label for="email" id="label-email">
+            Email: {{email}}
+        </label>
+
+        <!-- Input Type Email-->
+        <input type="email"
+               id="email" name="email"
+               placeholder="Enter your email"/>
+    </div>
+
+    <div class="form-control">
+        <label for="email" id="label-phone">
+            Phone: {{phone}}
+        </label>
+
+        <!-- Input Type Email-->
+        <input type="phone"
+               id="phone" name="phone"
+               placeholder="Enter your phone"/>
+    </div>
+
+    <div class="form-control">
+        <label for="age" id="label-age">
+            Age: {{age}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="age" name="age"
+               placeholder="Enter your age"/>
+    </div>
+
+    <div class="form-control">
+        <label for="country" id="label-country">
+            Country: {{country}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="country" name="country"
+               placeholder="Enter your country"/>
+    </div>
+
+    <div class="form-control">
+        <label for="town" id="label-town">
+            Town: {{town}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="town" name="town"
+               placeholder="Enter your town"/>
+    </div>
+
+    <div class="form-control">
+        <label for="profession" id="label-profession">
+            Profession: {{profession}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="profession" name="profession"
+               placeholder="Enter your profession"/>
+    </div>
+
+    <div class="form-control">
+        <label for="experience" id="label-experience">
+            Experience: {{experience}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="experience" name="experience"
+               placeholder="Enter your experience"/>
+    </div>
+
+    <div class="form-control">
+        <label for="education" id="label-education">
+            Education: {{education}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="education" name="education"
+               placeholder="Enter your education"/>
+    </div>
+
+    <div class="form-control">
+        <label for="languages" id="label-languages">
+            Languages: {{languages}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="languages" name="languages"
+               placeholder="Enter your languages"/>
+    </div>
+
+    <div class="form-control">
+        <label for="skills" id="label-skills">
+            Skills: {{skills}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="skills" name="skills"
+               placeholder="Enter your skills"/>
+    </div>
+
+    <div class="form-control">
+        <label for="interests" id="label-interests">
+            Interests: {{interests}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="interests" name="interests"
+               placeholder="Enter your interests"/>
+    </div>
+
+    <div class="form-control">
+        <label for="image_url" id="label-image_url">
+            Photo: {{image_url}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="image_url" name="image_url"
+               placeholder="Enter your photo by url: https:// (png,jpg)"/>
+    </div>
+
+    <div class="form-control">
+        <label for="extra" id="label-extra">
+            Extracurriculars: {{extra}}
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+               id="extra" name="extra"
+               placeholder="Enter your extracurriculars"/>
+    </div>
+
+    <!-- Multi-line Text Input Control -->
+    <button type="submit" value="submit" formaction="{{url_for('change_form')}}">
+        Submit
+    </button>
+    <button type="submit" value="CV" formaction="{{url_for('cv')}}">
+        CV
+    </button>
+</form>
+</body>
+
+</html>

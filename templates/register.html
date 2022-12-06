@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+<div class="main">
+
+    <div class="label">
+        <form>
+            <label>Sign up</label><center>{% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </center>
+            <input type="text" name="user_name_reg" placeholder="User name" required="">
+            <input type="password" name="password_reg" placeholder="Password" required="">
+            <input type="password" name="password_reg_2" placeholder="Retype Password" required="">
+            <form>
+                <button type="submit" formaction="{{url_for('register')}}" method="get">Sign up</button>
+            </form>
+        </form>
+    </div>
+
+    <div class="login">
+        <a href="{{url_for('login')}}" class="button">Log in</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
